@@ -28,12 +28,15 @@ namespace BT
 			{
 				NodeStatus result = node->tick();
 
-				if (result == NodeStatus::NODE_SUCCESS) {
+				if (result == NodeStatus::NODE_SUCCESS)
+				{
 					running_index++;
+
 					if (running_index >= getNumberOfChildNodes())
 						setStatus(NodeStatus::NODE_SUCCESS);
 				}
-				else if (result == NodeStatus::NODE_FAILURE) {
+				else if (result == NodeStatus::NODE_FAILURE)
+				{
 					setStatus(NodeStatus::NODE_FAILURE);
 				}
 			}
